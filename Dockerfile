@@ -7,15 +7,11 @@ RUN apt-get update \
     && docker-php-ext-install mysqli pdo pdo_mysql \
     && rm -rf /var/lib/apt/lists/*
 
-
 COPY . /var/www/html/
-
 
 RUN chown -R www-data:www-data /var/www/html
 
-
 RUN mkdir -p /etc/nginx/conf.d
-
 
 RUN printf 'server {\n\
 listen 0.0.0.0:$PORT;\n\
@@ -36,6 +32,5 @@ fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;\n\
 
 
 EXPOSE 8080
-
 
 CMD php-fpm -D && nginx -g 'daemon off;'
