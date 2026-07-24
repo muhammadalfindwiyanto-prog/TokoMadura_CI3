@@ -1,18 +1,20 @@
 FROM php:8.2-apache
 
+# Install PHP extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-RUN a2enmod rewrite
+# Disable conflicting MPMs
+RUN a2dismod mpm_event mpm_worker || true
+RUN a2enmod mpm_prefork rewrite
 
-WORKDIR /var/www/html
+# Copy project ke web root
+COPY . /var/www/html/
 
-COPY . .
-
-RUN rm -f /etc/apache2/mods-enabled/mpm_event.load
-RUN rm -f /etc/apache2/mods-enabled/mpm_event.conf
-
+# Set permission
 RUN chown -R www-data:www-data /var/www/html
 
+# Expose port 80
 EXPOSE 80
 
+# Start Apache
 CMD ["apache2-foreground"]
