@@ -6,10 +6,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn'      => '',
-    'hostname' => 'localhost',
-    'username' => 'root',
-    'password' => '',
-    'database' => 'toko_madura',
+    'hostname' => getenv('MYSQLHOST') ?: '127.0.0.1',
+    'username' => getenv('MYSQLUSER') ?: 'root',
+    'password' => getenv('MYSQLPASSWORD') ?: '',
+    'database' => getenv('MYSQLDATABASE') ?: 'toko_madura',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
@@ -23,5 +23,6 @@ $db['default'] = array(
     'compress' => FALSE,
     'stricton' => FALSE,
     'failover' => array(),
-    'save_queries' => TRUE
+    'save_queries' => (ENVIRONMENT !== 'production'),
+    'port' => (int) (getenv('MYSQLPORT') ?: 3306),
 );
