@@ -1,0 +1,9 @@
+HASIL PEMERIKSAAN TOKO MADURA DIGITAL - CI3
+===========================================
+
+- Sintaks seluruh file PHP application: LOLOS php -l
+- Konfigurasi database: toko_madura
+- SQL utama: database/toko_madura.sql
+- API login, produk, kategori, dan pesanan: tersedia
+- Transaksi checkout dan pengembalian stok saat pembatalan: tersedia
+- CSRF web aktif dan endpoint API dikecualikan

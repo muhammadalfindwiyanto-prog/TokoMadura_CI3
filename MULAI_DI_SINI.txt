@@ -1,0 +1,37 @@
+TOKO MADURA DIGITAL - PANDUAN CEPAT
+
+1. Ekstrak folder TokoMadura_CI3 ke:
+   C:\laragon\www\TokoMadura_CI3
+
+2. Jalankan Laragon, aktifkan Apache dan MySQL.
+
+3. Buka phpMyAdmin, lalu import:
+   database\toko_madura.sql
+
+4. Buka website:
+   http://localhost/TokoMadura_CI3/
+
+5. Login admin:
+   Username: admin
+   Password: admin123
+
+6. Buka proyek TokoMadura_Android melalui Android Studio.
+
+7. Login aplikasi Android:
+   Username: pelanggan
+   Password: pelanggan123
+
+8. Base URL emulator:
+   http://10.0.2.2/TokoMadura_CI3/
+
+9. Untuk HP fisik, laptop dan HP harus satu Wi-Fi. Ganti server menjadi:
+   http://IP-LAPTOP/TokoMadura_CI3/
+   Contoh: http://192.168.1.10/TokoMadura_CI3/
+
+Alur demo:
+- Admin menambah/mengedit produk pada website.
+- Pelanggan membuka katalog Android dan menambah produk ke keranjang.
+- Pelanggan checkout.
+- Pesanan muncul di menu Pesanan pada website.
+- Admin mengubah status pesanan.
+- Status terbaru terlihat pada aplikasi Android.
