@@ -4,7 +4,7 @@
 -- Client Android: pelanggan / pelanggan123
 
 CREATE DATABASE IF NOT EXISTS `toko_madura` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `toko_madura`;
+
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
