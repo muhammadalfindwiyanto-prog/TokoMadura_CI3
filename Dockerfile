@@ -13,7 +13,7 @@ RUN rm -f /etc/nginx/sites-enabled/default \
     && chown -R www-data:www-data /var/www/html
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-
+RUN echo "nginx assets fix rebuild"
 EXPOSE 8080
 
 CMD ["sh", "-c", "sed -i \"s/__PORT__/${PORT:-8080}/g\" /etc/nginx/conf.d/default.conf && php-fpm -D && exec nginx -g 'daemon off;'"]
